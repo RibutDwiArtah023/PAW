@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAS</title>
+    <style>
+        .merah{
+            background: red;
+            display: none;
+            width: 500px;
+            height: 500px;
+        }
+        .biru{
+            background-color: blue;
+            display: none;
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <form name="fromLogin" action="" method="post" class="login" onsubmit="return outbox();">
+        <label for="angka">masukkan angka
+        <input type="number" name="angka" id="angka"></label>
+        <button type="reset">RESET</button>&emsp;&emsp;&emsp;&emsp;<button type="submit">SUBMIT</button>
+    </form>
+    <div class="merah" id="merah"></div>
+    <div  class="biru" id="biru"></div>
+    
+    <script>
+        function outbox(){
+            if(document.forms['fromLogin']['angka'].value%2==0){
+                document.getElementById('merah').style.display ='block';
+                document.getElementById('biru').style.display ='none';
+                document.forms['fromLogin']['angka'].focus();
+                return false;
+            }else{
+                document.getElementById('biru').style.display ='block';
+                document.getElementById('merah').style.display ='none';
+                document.forms['fromLogin']['angka'].focus();
+                return false;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
